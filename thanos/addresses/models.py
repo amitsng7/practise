@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
+from zipcodes.models import Zipcode
 
 class Address(models.Model):
     street = models.CharField(max_length=140)
@@ -11,22 +12,10 @@ class Address(models.Model):
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return (self.street + " " + self.landmark + " " + self.city)
 
     def __unicode__(self):
-        return self.title
+        return (self.street + " " + self.landmark + " " + self.city)
 
     class Meta:
         ordering=["-timestamp"]
-
-    # @property
-    # def comments(self):
-    #     instance = self
-    #     qs = Comment.objects.filter_by_instance(instance)
-    #     return qs
-
-    # @property
-    # def get_content_type(self):
-    #     instance = self
-    #     content_type = ContentType.objects.get_for_model(instance.__class__)
-    #     return content_type
