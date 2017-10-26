@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'categories',
     'subcategories',
     't_departments',
+    't_groups',
+    # 't_locations',
+    # 't_customs',
 ]
 
 MIDDLEWARE = [
