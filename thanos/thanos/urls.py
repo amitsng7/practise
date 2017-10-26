@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^company/', include("companies.urls", namespace='company-api')),
     url(r'^category/', include("categories.urls", namespace='category-api')),
     url(r'^subcategory/', include("subcategories.urls", namespace='subcategory-api')),
+    url(r'^department/', include("departments.urls", namespace='department-api')),
 ]

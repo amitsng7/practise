@@ -35,11 +35,11 @@ class SubCategoryListSerializer(ModelSerializer):
 		]
 
 class SubCategoryDetailSerializer(ModelSerializer):
-	# company_id = CompanyDetailSerializer()
+    company_id = CompanyDetailSerializer()
     category_id = CategoryDetailSerializer()
     class Meta:
-		model = SubCategory
-		fields = [
+        model = SubCategory
+        fields = [
 			'id',
     		'name',
 			'code',
@@ -48,7 +48,7 @@ class SubCategoryDetailSerializer(ModelSerializer):
     		'updated',
             'timestamp',
 		]
-		read_only_fields=[
+        read_only_fields=[
 		    'updated',
 		    'timestamp',
 		]
