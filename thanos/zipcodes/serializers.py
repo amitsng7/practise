@@ -15,13 +15,9 @@ class ZipcodeCreateSerializer(ModelSerializer):
 		]
 
 class ZipcodeListSerializer(ModelSerializer):
-	# url = HyperlinkedIdentityField(
-	# 	view_name = "zipcodes-api:detail",
-	# )
 	class Meta:
 		model = Zipcode
 		fields = [
-			# 'url',
 			'zipcode',
     		'state',
 		    'country',
@@ -36,10 +32,4 @@ class ZipcodeDetailSerializer(ModelSerializer):
 			'zipcode',
     		'state',
 		    'country',
-		    'updated',
-		    'timestamp',
-		]
-		read_only_fields=[
-		    'updated',
-		    'timestamp',
 		]

@@ -29,7 +29,7 @@ class ZipcodeDetailAPIView(DestroyModelMixin, UpdateModelMixin, RetrieveAPIView)
 	queryset = Zipcode.objects.filter(zipcode__gte=0)
 	serializer_class = ZipcodeDetailSerializer
 
-	def put(self, request, *args, **kwargs):
-		return self.update(request, *args, **kwargs)
-	def delete(self, request, *args, **kwargs):
-		return self.destroy(request, *args, **kwargs)
+	def put(self, instance, *args, **kwargs):
+		return self.update(instance, *args, **kwargs)
+	def delete(self, instance, *args, **kwargs):
+		return self.destroy(instance, *args, **kwargs)

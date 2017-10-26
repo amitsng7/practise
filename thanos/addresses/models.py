@@ -4,6 +4,7 @@ from django.db import models
 from zipcodes.models import Zipcode
 
 class Address(models.Model):
+
     street = models.CharField(max_length=140)
     landmark = models.CharField(max_length=140)
     city = models.CharField(max_length=140)
@@ -19,3 +20,4 @@ class Address(models.Model):
 
     class Meta:
         ordering=["-timestamp"]
+        verbose_name_plural = 'Addresses'

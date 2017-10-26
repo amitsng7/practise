@@ -17,6 +17,10 @@ from django.conf.urls import include,url
 from django.contrib import admin
 
 urlpatterns = [
+    # url(r'^silk/', include('silk.urls', namespace='silk')),
     url(r'^admin/', admin.site.urls),
     url(r'^zipcodes/', include("zipcodes.urls", namespace='zipcode-api')),
+    url(r'^address/', include("addresses.urls", namespace='address-api')),
+    url(r'^company/', include("companies.urls", namespace='company-api')),
+    url(r'^category/', include("categories.urls", namespace='category-api')),
 ]

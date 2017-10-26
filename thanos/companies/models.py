@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from addresses.models import Address
 from django.core.validators import RegexValidator
@@ -26,3 +25,4 @@ class Company(models.Model):
 
     class Meta:
         ordering=["-timestamp"]
+        verbose_name_plural = 'Companies'
