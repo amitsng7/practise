@@ -24,8 +24,5 @@ urlpatterns = [
     url(r'^company/', include("companies.urls", namespace='company-api')),
     url(r'^category/', include("categories.urls", namespace='category-api')),
     url(r'^subcategory/', include("subcategories.urls", namespace='subcategory-api')),
-    url(r'^department/', include("t_departments.urls", namespace='department-api')),
-    url(r'^group/', include("t_groups.urls", namespace='group-api')),
-    # url(r'^locations/', include("t_locations.urls", namespace='location-api')),
-    # url(r'^customs/', include("t_customs.urls", namespace='custom-api')),
+    url(r'^team/', include("teams.urls", namespace='team-api')),
 ]

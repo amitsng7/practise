@@ -1,42 +1,45 @@
 from rest_framework.serializers import (
 	ModelSerializer,
 )
-from .models import t_Department
+from .models import Team
 from companies.models import Company
 from companies.serializers import CompanyDetailSerializer
 
-class DepartmentCreateSerializer(ModelSerializer):
+class TeamCreateSerializer(ModelSerializer):
 	class Meta:
-		model = t_Department
+		model = Team
 		fields = [
 			'id',
     		'name',
 			'code',
+			'detail_type',
     		'company_id',
     		'updated',
             'timestamp',
 		]
 
-class DepartmentListSerializer(ModelSerializer):
+class TeamListSerializer(ModelSerializer):
 	class Meta:
-		model = t_Department
+		model = Team
 		fields = [
 			'id',
     		'name',
 			'code',
+			'detail_type',
     		'company_id',
     		'updated',
             'timestamp',
 		]
 
-class DepartmentDetailSerializer(ModelSerializer):
+class TeamDetailSerializer(ModelSerializer):
     company_id = CompanyDetailSerializer()
     class Meta:
-        model = t_Department
+        model = Team
         fields = [
 			'id',
     		'name',
 			'code',
+			'detail_type',
     		'company_id',
     		'updated',
             'timestamp',
@@ -46,13 +49,14 @@ class DepartmentDetailSerializer(ModelSerializer):
 		    'timestamp',
 		]
 
-class DepartmentSerializer(ModelSerializer):
+class TeamSerializer(ModelSerializer):
 	class Meta:
-		model = t_Department
+		model = Team
 		fields = [
 			'id',
     		'name',
 			'code',
+			'detail_type',
     		'company_id',
     		'updated',
             'timestamp',
@@ -64,6 +68,7 @@ class DepartmentSerializer(ModelSerializer):
 	def update(self, instance, validated_data):
 		instance.name = validated_data.get('name', instance.name)
 		instance.code = validated_data.get('code', instance.code)
+		instance.detail_type = validated_data.get('detail_type', instance.detail_type)
 		instance.company_id = validated_data.pop('company_id', instance.company_id)
 		instance.save()
 		return instance

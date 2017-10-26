@@ -44,10 +44,7 @@ INSTALLED_APPS = [
     'zipcodes',
     'categories',
     'subcategories',
-    't_departments',
-    't_groups',
-    # 't_locations',
-    # 't_customs',
+    'teams',
 ]
 
 MIDDLEWARE = [
