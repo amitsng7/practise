@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'addresses',
     'zipcodes',
     'categories',
+    'subcategories',
 ]
 
 MIDDLEWARE = [
